@@ -1,0 +1,80 @@
+:root {
+  --background: #ffffff;
+  --text-color: #555555;
+  --text-color-header: #0a1922;
+  --text-color-light: #707070;
+  --shadow-color: #eeeeee;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #242424;
+    --text-color: #cccccc;
+    --text-color-header: #ffffff;
+    --text-color-light: #888;
+    --shadow-color: #191919;
+  }
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: unset;
+  color: var(--text-color-header);
+}
+
+p {
+  color: var(--text-color-light);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+
+  display: grid;
+  grid-template-columns: 1fr minmax(0px, 680px) 1fr;
+}
+
+body div {
+  grid-column: 2;
+}
+
+a {
+  color: unset;
+}
+
+.header {
+  margin-top: 20vh;
+  font-size: xx-large;
+}
+
+.content {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: auto;
+}
+
+@media (min-width: 680px) {
+  .content {
+    grid-template-columns: auto auto;
+  }
+}
+
+.card {
+  display: block;
+  font-size: x-large;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px 8px var(--shadow-color);
+  text-decoration: unset;
+  transform: scale(1.00);
+  transition: transform 0.05s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card h3, .card p {
+  margin: 10px
+}
+
